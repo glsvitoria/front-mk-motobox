@@ -87,6 +87,9 @@ const config: Config = {
         'elevation-light-4':
           '0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.30)',
       },
+      gap: {
+        18: '4.5rem',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
