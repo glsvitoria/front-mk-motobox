@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react'
 export const HomePage = () => {
   return (
     <div
-      className="h-[650px] flex justify-center"
+      className="h-[650px] lg:mt-0 mt-16 flex justify-center"
       style={{
         backgroundImage: 'url(/hero.png)',
         backgroundSize: 'cover',
@@ -12,10 +12,10 @@ export const HomePage = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="bg-hero w-full px-20 flex flex-col justify-center">
-        <div className="w-1/2 flex flex-col gap-6 items-center">
-          <div className="flex flex-col gap-2">
-            <h1 className="font-semibold text-[40px] leading-[120%] text-white">
+      <div className="bg-hero w-full px-4 lg:px-20 flex flex-col justify-center">
+        <div className="w-full lg:w-[540px] flex flex-col gap-6 items-center">
+          <div className="flex flex-col gap-2 w-full">
+            <h1 className="font-semibold text-2xl lg:text-[40px] leading-[150%] lg:leading-[120%] text-white">
               Qualidade, segurança e velocidade por todo o Brasil
             </h1>
             <p className="heading-sm text-white">

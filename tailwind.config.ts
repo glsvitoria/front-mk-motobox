@@ -91,6 +91,13 @@ const config: Config = {
         18: '4.5rem',
       },
     },
+    screens: {
+      sm: '420px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1440px',
+    },
   },
   plugins: [require('tailwindcss-animate')],
 }

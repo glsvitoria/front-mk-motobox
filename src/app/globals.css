@@ -16,7 +16,7 @@ body {
 	}
 
     .heading-sm {
-        @apply text-[19px] font-semibold leading-[120%];
+        @apply lg:text-[19px] font-semibold leading-[150%] lg:leading-[120%];
     }
 
     .heading-md {
