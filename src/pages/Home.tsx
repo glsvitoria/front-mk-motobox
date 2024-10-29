@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
 
-export const HomePage = () => {
+export default function HomePage() {
   return (
     <div
       className="h-[650px] lg:mt-0 mt-16 flex justify-center"
