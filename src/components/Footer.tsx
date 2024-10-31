@@ -6,11 +6,16 @@ import { cn } from '@/lib/utils'
 
 export const Footer = () => {
   return (
-    <footer className="bg-foundation-black-13 pt-16 pb-10 px-4 lg:px-24 flex flex-col gap-4 lg:gap-12">
+    <footer
+      className={cn([
+        'bg-foundation-black-13 pt-16 pb-10 container flex flex-col gap-4',
+        'lg:gap-12',
+      ])}
+    >
       <div
         className={cn([
           'flex gap-4 flex-col items-center border-b-2 border-[#FFFFFF20] justify-between pt-12 w-full pb-6',
-          'lg:flex-row lg:gap-0 lg:border-t-2 lg:border-b-0',
+          'md:flex-row md:gap-0 md:border-t-2 md:border-b-0',
         ])}
       >
         <div className="flex flex-col gap-8">
@@ -19,14 +24,14 @@ export const Footer = () => {
             alt="Logomarca da MK Moto Box"
             className={cn([
               'w-[127px] h-[54px]',
-              'lg:w-[167px] lg:h-[69px]',
-              '2xl:w-[285px] 2xl:h-[120px]',
+              'md:w-[167px] md:h-[69px]',
+              'lg:w-[285px] lg:h-[120px]',
             ])}
             width={285}
             height={120}
           />
           <div
-            className={cn(['hidden flex-col gap-4', 'lg:flex', '2xl:hidden'])}
+            className={cn(['hidden flex-col gap-4', 'md:flex', 'lg:hidden'])}
           >
             <p className="body-md-semibold uppercase text-white">
               Deseja marcar hora?
@@ -43,14 +48,14 @@ export const Footer = () => {
         <div
           className={cn([
             'flex flex-col w-full items-center gap-6',
-            'lg:flex-row lg:w-auto lg:items-start lg:gap-18',
+            'md:flex-row md:w-auto md:items-start md:gap-18',
           ])}
         >
           <div
             className={cn([
               'flex flex-col gap-4 w-full items-center',
-              'lg:hidden',
-              '2xl:flex',
+              'md:hidden',
+              'lg:flex',
             ])}
           >
             <p className="body-md-semibold uppercase text-white lg:block hidden">
@@ -59,8 +64,7 @@ export const Footer = () => {
             <p
               className={cn([
                 'body-md-semibold uppercase text-white block text-center px-4',
-                'md:px-16',
-                'lg:hidden',
+                'md:hidden',
               ])}
             >
               Sua loja nacional de motos usadas com curadoria de qualidade.
@@ -86,7 +90,7 @@ export const Footer = () => {
             <p
               className={cn([
                 'body-md-semibold uppercase text-white text-center',
-                'lg:text-start',
+                'md:text-start',
               ])}
             >
               Contato

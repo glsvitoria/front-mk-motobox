@@ -72,6 +72,7 @@ const config: Config = {
             13: '#130F0F',
           },
         },
+        gray: '#737373',
       },
       backgroundImage: {
         hero: 'linear-gradient(180deg, rgba(19, 15, 15, 0.50) 67.85%, #130F0F 100%)',
@@ -93,10 +94,9 @@ const config: Config = {
     },
     screens: {
       sm: '420px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1440px',
+      md: '1024px',
+      lg: '1440px',
+      xl: '1920px',
     },
   },
   plugins: [require('tailwindcss-animate')],

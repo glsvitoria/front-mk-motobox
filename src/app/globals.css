@@ -11,6 +11,10 @@ body {
 }
 
 @layer utilities {
+    .container {
+        @apply max-w-screen-xl px-4 md:px-24 lg:px-32 xl:px-40;
+    }
+
 	.text-balance {
 		text-wrap: balance;
 	}
