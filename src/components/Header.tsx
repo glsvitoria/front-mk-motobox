@@ -28,7 +28,7 @@ export const Header = () => {
   return (
     <header
       className={cn([
-        'container w-full flex justify-between items-center text-[#E9E9E9] h-16 font-medium fixed top-0 left-0 right-0  transition-all duration-300 gap-20 z-10',
+        'container w-full flex justify-between items-center text-[#E9E9E9] h-16 font-medium fixed top-0 left-0 right-0  transition-all duration-300 gap-20 z-20',
         'md:grid md:grid-cols-[1fr_auto_1fr] md:justify-center md:h-20',
         isScrolled
           ? 'bg-foundation-black-13'

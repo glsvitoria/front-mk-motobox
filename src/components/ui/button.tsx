@@ -17,7 +17,7 @@ const buttonVariants = cva(
           'bg-foundation-orange-300 text-white focus-visible:bg-foundation-black-11 hover:bg-foundation-orange-400',
       },
       size: {
-        default: 'h-[54px] px-4 py-2 min-w-52',
+        default: 'h-[54px] px-4 py-2 min-w-40',
       },
     },
     defaultVariants: {

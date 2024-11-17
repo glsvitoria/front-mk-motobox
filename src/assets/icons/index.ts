@@ -1,6 +1,7 @@
 import { Gmail } from './Gmail'
 import { Instagram } from './Instagram'
-import { MKMotoBox } from './MKMotoBox'
+import * as MKMotoBox from './MKMotoBox'
+import { Road } from './Road'
 import { Whatsapp } from './Whatsapp'
 
-export { Gmail, Instagram, MKMotoBox, Whatsapp }
+export { Gmail, Instagram, MKMotoBox, Road, Whatsapp }
