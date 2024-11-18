@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import * as Icons from '@/assets/icons'
 
-export const Categories = () => {
+export default function Categories() {
   return (
     <section className="container items-center py-16 flex flex-col gap-6">
       <div

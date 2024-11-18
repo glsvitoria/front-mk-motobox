@@ -3,7 +3,7 @@ import * as MotorcycleCard from '@/components/MotorcycleCard'
 import * as Icons from '@/assets/icons'
 import { Button } from '@/components/ui/button'
 
-export const MotorsSale = () => {
+export default function MotorsSale() {
   return (
     <section className="container items-center py-16 hidden md:flex flex-col gap-6 relative">
       <div

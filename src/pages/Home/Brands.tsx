@@ -2,7 +2,7 @@ import * as BrandCard from '@/components/BrandCard'
 import * as Icons from '@/assets/icons'
 import { cn } from '@/lib/utils'
 
-export const Brands = () => {
+export default function Brands() {
   return (
     <section className="container items-center py-16 flex flex-col gap-12 relative">
       <div className="w-full flex justify-between items-center">

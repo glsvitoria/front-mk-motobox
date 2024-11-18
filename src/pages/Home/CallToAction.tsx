@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import * as Icons from '@/assets/icons'
 
-export const CallToAction = () => {
+export default function CallToAction() {
   return (
     <section className="container items-center py-16 flex flex-col gap-6 relative">
       <div className="flex md:flex-row flex-col items-center gap-4 md:gap-8 w-full">

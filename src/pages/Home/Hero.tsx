@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ChevronRight } from 'lucide-react'
 
-export const Hero = () => {
+export default function Hero() {
   return (
     <section
       className={cn([

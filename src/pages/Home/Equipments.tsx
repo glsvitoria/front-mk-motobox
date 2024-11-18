@@ -2,7 +2,7 @@ import * as EquipmentCard from '@/components/EquipmentCard'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
-export const Equipments = () => {
+export default function Equipments() {
   return (
     <section className="container items-center py-16">
       <div
