@@ -17,6 +17,7 @@ export default function Categories() {
             'flex justify-between items-center col-span-1',
             'sm:col-span-2',
             'md:col-span-3',
+            'lg:col-span-6',
           ])}
         >
           <h2 className="text-2xl font-semibold text-gray">Categorias</h2>
