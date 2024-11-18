@@ -76,6 +76,8 @@ const config: Config = {
       },
       backgroundImage: {
         hero: 'linear-gradient(180deg, rgba(19, 15, 15, 0.50) 67.85%, #130F0F 100%)',
+        equipmentCard:
+          'radial-gradient(231% 135.8% at 0.9% 2.98%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%)',
       },
       borderRadius: {
         lg: 'var(--radius)',
