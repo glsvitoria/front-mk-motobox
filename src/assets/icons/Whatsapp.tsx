@@ -1,6 +1,6 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from "react";
 
-export interface WhatsappProps extends ComponentProps<'svg'> {}
+export interface WhatsappProps extends ComponentProps<"svg"> {}
 
 export const Whatsapp = ({ ...props }: WhatsappProps) => {
   return (
@@ -17,5 +17,5 @@ export const Whatsapp = ({ ...props }: WhatsappProps) => {
         clipRule="evenodd"
       />
     </svg>
-  )
-}
+  );
+};

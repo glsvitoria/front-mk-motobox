@@ -1,41 +1,41 @@
-'use client'
+"use client";
 
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { NavLink } from './NavLink'
-import { PanelLeftClose } from 'lucide-react'
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { NavLink } from "./NavLink";
+import { PanelLeftClose } from "lucide-react";
 
 export const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header
       className={cn([
-        'container w-full flex justify-between items-center text-[#E9E9E9] h-16 font-medium fixed top-0 left-0 right-0  transition-all duration-300 gap-20 z-20',
-        'md:grid md:grid-cols-[1fr_auto_1fr] md:justify-center md:h-20',
+        "container fixed left-0 right-0 top-0 z-20 flex h-16 w-full items-center justify-between gap-20 font-medium text-[#E9E9E9] transition-all duration-300",
+        "md:grid md:h-20 md:grid-cols-[1fr_auto_1fr] md:justify-center",
         isScrolled
-          ? 'bg-foundation-black-13'
-          : 'bg-foundation-black-13 md:bg-transparent',
+          ? "bg-foundation-black-13"
+          : "bg-foundation-black-13 md:bg-transparent",
       ])}
     >
-      <nav className={cn(['md:block hidden'])}>
+      <nav className={cn(["hidden md:block"])}>
         <ul className="flex justify-between">
           <NavLink href="">Motos</NavLink>
           <NavLink href="">Categorias</NavLink>
@@ -45,18 +45,18 @@ export const Header = () => {
       <Image
         src="/logo.svg"
         alt="Logomarca da MK Moto Box"
-        className="w-[94px] h-[39px] md:w-[127px] md:h-[53px] md:mx-auto"
+        className="h-[39px] w-[94px] md:mx-auto md:h-[53px] md:w-[127px]"
         width={285}
         height={120}
       />
-      <nav className={cn(['md:block hidden'])}>
+      <nav className={cn(["hidden md:block"])}>
         <ul className="flex justify-between">
           <NavLink href="">Sobre nós</NavLink>
           <NavLink href="">Marcas</NavLink>
           <NavLink href="">Onde estamos</NavLink>
         </ul>
       </nav>
-      <PanelLeftClose className="block h-6 w-6 md:hidden text-foundation-orange-300" />
+      <PanelLeftClose className="block h-6 w-6 text-foundation-orange-300 md:hidden" />
     </header>
-  )
-}
+  );
+};

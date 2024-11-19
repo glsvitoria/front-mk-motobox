@@ -1,7 +1,7 @@
-import Link, { LinkProps } from 'next/link'
+import Link, { LinkProps } from "next/link";
 
 export interface NavLinkProps extends LinkProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export const NavLink = ({ ...props }: NavLinkProps) => {
@@ -12,5 +12,5 @@ export const NavLink = ({ ...props }: NavLinkProps) => {
         {...props}
       ></Link>
     </li>
-  )
-}
+  );
+};

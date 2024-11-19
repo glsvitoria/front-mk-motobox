@@ -60,5 +60,5 @@ export const K = () => {
         </filter>
       </defs>
     </svg>
-  )
-}
+  );
+};

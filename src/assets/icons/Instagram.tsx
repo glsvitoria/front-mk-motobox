@@ -1,6 +1,6 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from "react";
 
-export interface InstagramProps extends ComponentProps<'svg'> {}
+export interface InstagramProps extends ComponentProps<"svg"> {}
 
 export const Instagram = ({ ...props }: InstagramProps) => {
   return (
@@ -29,5 +29,5 @@ export const Instagram = ({ ...props }: InstagramProps) => {
         d="M10 6.867a3.332 3.332 0 110 6.667 3.332 3.332 0 110-6.667z"
       />
     </svg>
-  )
-}
+  );
+};

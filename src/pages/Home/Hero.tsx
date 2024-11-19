@@ -1,34 +1,34 @@
-import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
-import { ChevronRight } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       className={cn([
-        'container relative h-[650px] mt-16 flex justify-center',
-        'md:mt-0',
+        "container relative mt-16 flex h-[650px] justify-center",
+        "md:mt-0",
       ])}
       style={{
-        backgroundImage: 'url(/hero.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'top',
-        backgroundRepeat: 'no-repeat',
+        backgroundImage: "url(/hero.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute bg-hero top-0 bottom-0 right-0 left-0" />
-      <div className="w-full flex flex-col justify-center z-10">
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-hero" />
+      <div className="z-10 flex w-full flex-col justify-center">
         <div
           className={cn([
-            'w-full flex flex-col gap-6 items-center',
-            'md:w-[540px]',
+            "flex w-full flex-col items-center gap-6",
+            "md:w-[540px]",
           ])}
         >
-          <div className="flex flex-col gap-2 w-full">
+          <div className="flex w-full flex-col gap-2">
             <h1
               className={cn([
-                'font-semibold text-2xl leading-[150%] text-white',
-                'md:text-[40px] md:leading-[120%]',
+                "text-2xl font-semibold leading-[150%] text-white",
+                "md:text-[40px] md:leading-[120%]",
               ])}
             >
               Qualidade, segurança e velocidade por todo o Brasil
@@ -40,10 +40,10 @@ export default function Hero() {
           </div>
           <Button variant="primary" className="w-full text-foundation-black-13">
             Fale Conosco
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="h-6 w-6" />
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

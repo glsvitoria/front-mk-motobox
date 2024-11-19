@@ -1,16 +1,16 @@
-import * as BrandCard from '@/components/BrandCard'
-import * as Icons from '@/assets/icons'
-import { cn } from '@/lib/utils'
+import * as BrandCard from "@/components/BrandCard";
+import * as Icons from "@/assets/icons";
+import { cn } from "@/lib/utils";
 
 export default function Brands() {
   return (
-    <section className="container items-center py-16 flex flex-col gap-12 relative">
-      <div className="w-full flex justify-between items-center">
+    <section className="container relative flex flex-col items-center gap-12 py-16">
+      <div className="flex w-full items-center justify-between">
         <h2 className="text-2xl font-semibold text-gray">
           Trabalhamos com as marcas
         </h2>
-        <div className="hidden md:flex gap-2 items-center">
-          <p className="text-white text-right">
+        <div className="hidden items-center gap-2 md:flex">
+          <p className="text-right text-white">
             Modelos das marcas mais famosas e
             <br />
             credibilizadas mundialmente.
@@ -18,15 +18,15 @@ export default function Brands() {
           <Icons.MKMotoBox.K />
         </div>
       </div>
-      <div className="flex gap-8 flex-wrap items-center justify-center">
+      <div className="flex flex-wrap items-center justify-center gap-8">
         <BrandCard.Root>
           <BrandCard.Image
             src="/brands/honda.svg"
             alt="Logo da Honda"
             className={cn([
-              'w-[65px] h-[49px]',
-              'md:w-[97px] md:h-[73px]',
-              'lg:w-[114px] lg:h-[85px]',
+              "h-[49px] w-[65px]",
+              "md:h-[73px] md:w-[97px]",
+              "lg:h-[85px] lg:w-[114px]",
             ])}
             width={114}
             height={85}
@@ -37,9 +37,9 @@ export default function Brands() {
             src="/brands/harley-davidson.svg"
             alt="Logo da Harley Davidson"
             className={cn([
-              'w-[65px] h-[49px]',
-              'md:w-[97px] md:h-[73px]',
-              'lg:w-[116px] lg:h-[87px]',
+              "h-[49px] w-[65px]",
+              "md:h-[73px] md:w-[97px]",
+              "lg:h-[87px] lg:w-[116px]",
             ])}
             width={116}
             height={87}
@@ -50,9 +50,9 @@ export default function Brands() {
             src="/brands/royal-enfield.svg"
             alt="Logo da Royald Enfield"
             className={cn([
-              'w-[155px] h-[24px]',
-              'md:w-[203px] md:h-[31px]',
-              'lg:w-[244px] lg:h-[36px]',
+              "h-[24px] w-[155px]",
+              "md:h-[31px] md:w-[203px]",
+              "lg:h-[36px] lg:w-[244px]",
             ])}
             width={244}
             height={36}
@@ -63,9 +63,9 @@ export default function Brands() {
             src="/brands/bmw.svg"
             alt="Logo da BMW"
             className={cn([
-              'w-[66px] h-[66px]',
-              'md:w-[82px] md:h-[82px]',
-              'lg:w-[98px] lg:h-[98px]',
+              "h-[66px] w-[66px]",
+              "md:h-[82px] md:w-[82px]",
+              "lg:h-[98px] lg:w-[98px]",
             ])}
             width={98}
             height={98}
@@ -76,9 +76,9 @@ export default function Brands() {
             src="/brands/triumph.svg"
             alt="Logo da Triumph"
             className={cn([
-              'w-[66px] h-[50px]',
-              'md:w-[97px] md:h-[75px]',
-              'lg:w-[117px] lg:h-[90px]',
+              "h-[50px] w-[66px]",
+              "md:h-[75px] md:w-[97px]",
+              "lg:h-[90px] lg:w-[117px]",
             ])}
             width={117}
             height={90}
@@ -89,9 +89,9 @@ export default function Brands() {
             src="/brands/suzuki.svg"
             alt="Logo da Suzuki"
             className={cn([
-              'w-[154px] h-[34px]',
-              'md:w-[190px] md:h-[42px]',
-              'lg:w-[228px] lg:h-[51px]',
+              "h-[34px] w-[154px]",
+              "md:h-[42px] md:w-[190px]",
+              "lg:h-[51px] lg:w-[228px]",
             ])}
             width={228}
             height={51}
@@ -102,9 +102,9 @@ export default function Brands() {
             src="/brands/yamaha.svg"
             alt="Logo da Yamaha"
             className={cn([
-              'w-[153px] h-[34px]',
-              'md:w-[190px] md:h-[42px]',
-              'lg:w-[228px] lg:h-[51px]',
+              "h-[34px] w-[153px]",
+              "md:h-[42px] md:w-[190px]",
+              "lg:h-[51px] lg:w-[228px]",
             ])}
             width={228}
             height={51}
@@ -115,9 +115,9 @@ export default function Brands() {
             src="/brands/kawasaki.svg"
             alt="Logo da Kawasaki"
             className={cn([
-              'w-[155px] h-[16px]',
-              'md:w-[203px] md:h-[22px]',
-              'lg:w-[244px] lg:h-[26px]',
+              "h-[16px] w-[155px]",
+              "md:h-[22px] md:w-[203px]",
+              "lg:h-[26px] lg:w-[244px]",
             ])}
             width={244}
             height={26}
@@ -126,5 +126,5 @@ export default function Brands() {
       </div>
       <div className="elipse-two" />
     </section>
-  )
+  );
 }

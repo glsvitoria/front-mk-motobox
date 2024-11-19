@@ -1,6 +1,6 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from "react";
 
-export interface IconProps extends ComponentProps<'div'> {}
+export interface IconProps extends ComponentProps<"div"> {}
 
 export const Icon = ({ ...props }: IconProps) => {
   return (
@@ -8,5 +8,5 @@ export const Icon = ({ ...props }: IconProps) => {
       className="text-white transition-all duration-300 group-hover:text-foundation-orange-300"
       {...props}
     />
-  )
-}
+  );
+};

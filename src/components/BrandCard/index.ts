@@ -1,4 +1,4 @@
-import { Image } from './Image'
-import { Root } from './Root'
+import { Image } from "./Image";
+import { Root } from "./Root";
 
-export { Image, Root }
+export { Image, Root };

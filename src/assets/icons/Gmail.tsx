@@ -1,6 +1,6 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from "react";
 
-export interface GmailProps extends ComponentProps<'svg'> {}
+export interface GmailProps extends ComponentProps<"svg"> {}
 
 export const Gmail = ({ ...props }: GmailProps) => {
   return (
@@ -26,5 +26,5 @@ export const Gmail = ({ ...props }: GmailProps) => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};

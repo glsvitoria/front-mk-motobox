@@ -1,4 +1,4 @@
-export interface MKProps extends React.ComponentProps<'svg'> {}
+export interface MKProps extends React.ComponentProps<"svg"> {}
 
 export const MK = ({ ...props }: MKProps) => {
   return (
@@ -98,5 +98,5 @@ export const MK = ({ ...props }: MKProps) => {
         </filter>
       </defs>
     </svg>
-  )
-}
+  );
+};

@@ -1,39 +1,39 @@
-import * as EquipmentCard from '@/components/EquipmentCard'
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
+import * as EquipmentCard from "@/components/EquipmentCard";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Equipments() {
   return (
     <section className="container items-center py-16">
       <div
         className={cn([
-          'border border-foundation-orange-200 w-full rounded-lg bg-foundation-black-12 flex px-4 py-4 justify-center',
-          'md:px-12 md:py-16',
+          "flex w-full justify-center rounded-lg border border-foundation-orange-200 bg-foundation-black-12 px-4 py-4",
+          "md:px-12 md:py-16",
         ])}
       >
         <div
           className={cn([
-            'flex md:flex-row flex-col gap-4 items-center -mt-16',
-            'md:items-end md:-mt-24',
+            "-mt-16 flex flex-col items-center gap-4 md:flex-row",
+            "md:-mt-24 md:items-end",
           ])}
         >
           <div
-            className={cn(['flex flex-col sm:items-end gap-2', 'sm:flex-row'])}
+            className={cn(["flex flex-col gap-2 sm:items-end", "sm:flex-row"])}
           >
             <Image
               src="/helmet.png"
               alt="Capacete de Moto"
               className={cn([
-                'w-[148px] h-[148px]',
-                'md:w-[250px] md:h-[250px]',
+                "h-[148px] w-[148px]",
+                "md:h-[250px] md:w-[250px]",
               ])}
               width={250}
               height={250}
             />
             <h2
               className={cn([
-                'block md:hidden uppercase text-white font-semibold text-2xl',
-                'sm:pb-12',
+                "block text-2xl font-semibold uppercase text-white md:hidden",
+                "sm:pb-12",
               ])}
             >
               Equipamentos
@@ -42,8 +42,8 @@ export default function Equipments() {
           <div className="flex flex-col gap-3 pb-8">
             <h2
               className={cn([
-                'hidden uppercase text-white font-semibold text-4xl',
-                'md:block',
+                "hidden text-4xl font-semibold uppercase text-white",
+                "md:block",
               ])}
             >
               MK Equipamentos
@@ -81,5 +81,5 @@ export default function Equipments() {
         </div>
       </div>
     </section>
-  )
+  );
 }
