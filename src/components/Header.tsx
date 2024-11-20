@@ -5,6 +5,17 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { NavLink } from "./NavLink";
 import { PanelLeftClose } from "lucide-react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "./ui/drawer";
+import { Button } from "./ui/button";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,7 +67,23 @@ export const Header = () => {
           <NavLink href="">Onde estamos</NavLink>
         </ul>
       </nav>
-      <PanelLeftClose className="block h-6 w-6 text-foundation-orange-300 md:hidden" />
+
+      <Drawer>
+        <DrawerTrigger>
+          <PanelLeftClose className="block h-6 w-6 text-foundation-orange-300 md:hidden" />
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+            <DrawerDescription>This action cannot be undone.</DrawerDescription>
+          </DrawerHeader>
+          <DrawerFooter>
+            <DrawerClose>
+              <Button variant="primary">Cancel</Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
     </header>
   );
 };
