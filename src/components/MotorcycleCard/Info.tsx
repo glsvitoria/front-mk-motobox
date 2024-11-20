@@ -27,7 +27,7 @@ export const Info = ({ title, km, value, year, ...props }: InfoProps) => {
         </p>
       </div>
       <p className="text-xl font-semibold">{masks.currency(value)}</p>
-      <Button variant="outline" className="uppercase">
+      <Button variant="outline" size="sm" className="uppercase">
         Saiba mais
         <ChevronRight className="h-5 w-5" />
       </Button>

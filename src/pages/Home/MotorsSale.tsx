@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import * as MotorcycleCard from "@/components/MotorcycleCard";
 import * as Icons from "@/assets/icons";
 import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 
 export default function MotorsSale() {
   return (
@@ -82,7 +83,9 @@ export default function MotorsSale() {
           />
         </MotorcycleCard.Root>
       </div>
-      <Button variant="outline">Ver mais</Button>
+      <Button variant="tertiary">
+        Ver mais <ChevronRight size={24} />
+      </Button>
       <div className="elipse-one" />
     </section>
   );
