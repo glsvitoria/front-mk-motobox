@@ -9,13 +9,12 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,14 +72,52 @@ export const Header = () => {
           <PanelLeftClose className="block h-6 w-6 text-foundation-orange-300 md:hidden" />
         </DrawerTrigger>
         <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-            <DrawerDescription>This action cannot be undone.</DrawerDescription>
-          </DrawerHeader>
+          <div className="flex flex-col gap-16">
+            <DrawerHeader>
+              <Image
+                src="/logo.svg"
+                alt="Logomarca da MK Motobox"
+                width={94}
+                height={40}
+              />
+            </DrawerHeader>
+            <ul className="flex flex-col gap-6 font-medium text-white">
+              <li>
+                <DrawerClose asChild>
+                  <Link href="#motors-sale">Motos</Link>
+                </DrawerClose>
+              </li>
+              <li>
+                <DrawerClose asChild>
+                  <Link href="#categories">Categorias</Link>
+                </DrawerClose>
+              </li>
+              <li>
+                <DrawerClose asChild>
+                  <Link href="#equipment">Equipamentos</Link>
+                </DrawerClose>
+              </li>
+              <li>
+                <DrawerClose asChild>
+                  <Link href="#about-us">Sobre nós</Link>
+                </DrawerClose>
+              </li>
+              <li>
+                <DrawerClose asChild>
+                  <Link href="#brands">Marcas</Link>
+                </DrawerClose>
+              </li>
+              <li>
+                <DrawerClose asChild>
+                  <Link href="#motos">Onde Estamos</Link>
+                </DrawerClose>
+              </li>
+            </ul>
+          </div>
           <DrawerFooter>
-            <DrawerClose>
-              <Button variant="primary">Cancel</Button>
-            </DrawerClose>
+            <Button variant="primary" className="text-foundation-black-13">
+              Fale Conosco
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

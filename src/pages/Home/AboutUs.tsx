@@ -4,7 +4,10 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <section className="container relative flex flex-col items-center gap-12 py-16">
+    <section
+      className="container relative flex flex-col items-center gap-12 pt-32"
+      id="about-us"
+    >
       <div className="flex w-full items-center justify-between">
         <h2 className="text-2xl font-semibold text-gray">Sobre nós</h2>
         <div className="hidden items-center gap-2 md:flex">

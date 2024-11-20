@@ -3,7 +3,7 @@ import * as Icons from "@/assets/icons";
 
 export default function CallToAction() {
   return (
-    <section className="container relative flex flex-col items-center gap-6 py-16">
+    <section className="container relative flex flex-col items-center gap-6 pt-32">
       <div className="flex w-full flex-col items-center gap-4 md:flex-row md:gap-8">
         <div className="flex w-full items-center gap-4 md:min-w-[480px]">
           <Icons.MKMotoBox.MK className="hidden min-w-12 md:block" />

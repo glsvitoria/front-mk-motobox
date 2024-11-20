@@ -4,7 +4,10 @@ import * as Icons from "@/assets/icons";
 
 export default function Categories() {
   return (
-    <section className="container flex flex-col items-center gap-6 py-16">
+    <section
+      className="container flex flex-col items-center gap-6 pt-16"
+      id="categories"
+    >
       <div
         className={cn([
           "grid w-fit grid-cols-1 gap-8 sm:grid-cols-2",

@@ -4,7 +4,10 @@ import { cn } from "@/lib/utils";
 
 export default function Brands() {
   return (
-    <section className="container relative flex flex-col items-center gap-12 py-16">
+    <section
+      className="container relative flex flex-col items-center gap-12 pt-32"
+      id="brands"
+    >
       <div className="flex w-full items-center justify-between">
         <h2 className="text-2xl font-semibold text-gray">
           Trabalhamos com as marcas
@@ -125,6 +128,7 @@ export default function Brands() {
         </BrandCard.Root>
       </div>
       <div className="elipse-two" />
+      <div className="elipse-three" />
     </section>
   );
 }

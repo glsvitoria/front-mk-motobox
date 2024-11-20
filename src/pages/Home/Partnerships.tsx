@@ -17,8 +17,8 @@ export default function Partnerships() {
         </div>
       </div>
 
-      <div className="flex w-full flex-col justify-between gap-8 md:flex-row md:gap-0">
-        <div className="flex h-min min-w-max justify-center gap-6 md:grid md:grid-cols-2">
+      <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row md:items-start md:gap-0">
+        <div className="grid h-min w-max grid-cols-2 gap-6 md:min-w-max">
           <div className="w-max rounded-xl border border-foundation-orange-300 bg-foundation-black-11 p-6">
             <Image
               src="/partnerships/amc.png"

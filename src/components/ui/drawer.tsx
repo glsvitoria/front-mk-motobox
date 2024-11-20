@@ -44,7 +44,7 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed bottom-0 right-0 top-0 z-50 flex h-screen flex-col overflow-hidden rounded-l-lg bg-foundation-black-11",
+        "fixed bottom-0 right-0 top-0 z-50 flex h-screen w-72 flex-col overflow-hidden bg-foundation-black-13 p-8",
         className,
       )}
       {...props}
@@ -60,7 +60,7 @@ const DrawerHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn("grid gap-1.5 p-4 text-center sm:text-left", className)}
+    className={cn("grid gap-1.5 text-center sm:text-left", className)}
     {...props}
   />
 );
@@ -70,10 +70,7 @@ const DrawerFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn("mt-auto flex flex-col gap-2 p-4", className)}
-    {...props}
-  />
+  <div className={cn("mt-auto flex flex-col gap-2", className)} {...props} />
 );
 DrawerFooter.displayName = "DrawerFooter";
 
@@ -92,18 +89,6 @@ const DrawerTitle = React.forwardRef<
 ));
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName;
 
-const DrawerDescription = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Description
-    ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props}
-  />
-));
-DrawerDescription.displayName = DrawerPrimitive.Description.displayName;
-
 export {
   Drawer,
   DrawerPortal,
@@ -114,5 +99,4 @@ export {
   DrawerHeader,
   DrawerFooter,
   DrawerTitle,
-  DrawerDescription,
 };

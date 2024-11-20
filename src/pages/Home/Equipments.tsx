@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Equipments() {
   return (
-    <section className="container items-center py-16">
+    <section className="container items-center pt-32" id="equipment">
       <div
         className={cn([
           "flex w-full justify-center rounded-lg border border-foundation-orange-200 bg-foundation-black-12 px-4 py-4",

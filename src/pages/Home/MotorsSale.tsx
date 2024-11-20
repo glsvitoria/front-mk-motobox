@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export default function MotorsSale() {
   return (
-    <section className="container relative hidden flex-col items-center gap-6 py-16 md:flex">
+    <section
+      className="container relative hidden flex-col items-center gap-6 py-16 md:flex"
+      id="motors-sale"
+    >
       <div
         className={cn([
           "flex w-full items-center justify-between",
