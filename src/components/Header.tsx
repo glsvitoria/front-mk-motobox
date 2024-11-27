@@ -44,7 +44,7 @@ export const Header = () => {
           : "bg-foundation-black-13 md:bg-transparent",
       ])}
     >
-      <div className="container mx-auto h-16 w-full items-center justify-between gap-x-20 pt-2 md:grid md:h-20 md:grid-cols-[1fr_auto_1fr] md:justify-center">
+      <div className="container mx-auto flex h-16 w-full items-center justify-between gap-x-20 pt-2 md:grid md:h-20 md:grid-cols-[1fr_auto_1fr] md:justify-center">
         <nav className={cn(["hidden md:block"])}>
           <ul className="flex justify-between">
             <NavLink href="">Motos</NavLink>
