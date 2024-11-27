@@ -9,7 +9,7 @@ import Partnerships from "@/pages/Home/Partnerships";
 
 export default function Home() {
   return (
-    <main className="w-[calc(100vw - 8px)] overflow-hidden">
+    <main className="w-[calc(100vw - 8px)] overflow-hidden flex flex-col items-center">
       <Hero />
       <Categories />
       <MotorsSale />

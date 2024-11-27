@@ -38,7 +38,7 @@ export const Header = () => {
   return (
     <header
       className={cn([
-        "container fixed left-0 right-0 top-0 z-20 flex h-16 w-full items-center justify-between gap-20 font-medium text-[#E9E9E9] transition-all duration-300",
+        "container fixed left-0 right-0 top-0 z-20 mx-auto flex h-16 w-full items-center justify-between gap-20 font-medium text-[#E9E9E9] transition-all duration-300",
         "pt-2 md:grid md:h-20 md:grid-cols-[1fr_auto_1fr] md:justify-center",
         isScrolled
           ? "bg-foundation-black-13"

@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       className={cn([
-        "container relative mt-16 flex h-[650px] justify-center",
+        "relative mt-16 flex h-[650px] w-full justify-center",
         "md:mt-0",
       ])}
       style={{
@@ -17,7 +17,7 @@ export default function Hero() {
       }}
     >
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-hero" />
-      <div className="z-10 flex w-full flex-col justify-center">
+      <div className="container z-10 flex w-full flex-col justify-center">
         <div
           className={cn([
             "flex w-full flex-col items-center gap-6",
