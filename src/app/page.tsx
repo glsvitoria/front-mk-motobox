@@ -9,7 +9,7 @@ import Partnerships from "@/pages/Home/Partnerships";
 
 export default function Home() {
   return (
-    <div>
+    <main className="w-[calc(100vw - 8px)] overflow-hidden">
       <Hero />
       <Categories />
       <MotorsSale />
@@ -18,6 +18,6 @@ export default function Home() {
       <AboutUs />
       <Partnerships />
       <Brands />
-    </div>
+    </main>
   );
 }
