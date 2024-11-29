@@ -1,6 +1,3 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
 import * as Icons from "@/assets/icons";
 import * as MotoStatistic from "@/components/MotoStatistic";
 import { CircleMinus } from "lucide-react";
@@ -11,10 +8,49 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { Moto } from "@/types";
+import { notFound } from "next/navigation";
+import { masks } from "@/utils/masks";
+import { InterestedButton } from "@/components/InterestedButton";
+import Image from "next/image";
 
-export default function Page() {
+async function getMoto(id: string): Promise<Moto> {
+  const res = await fetch(`http://localhost:1337/api/motos/${id}?populate=*`, {
+    // cache: "force-cache",
+  });
+  const data = await res.json();
+  const moto = data.data;
+
+  if (!moto) notFound();
+
+  return moto;
+}
+
+export async function generateStaticParams() {
+  const motos = await fetch(
+    "http://localhost:1337/api/motos?pagination[pageSize]=1000",
+    {
+      //   cache: "force-cache",
+    },
+  ).then((res) => res.json());
+
+  return motos.data.map((post: Moto) => ({
+    id: post.documentId,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const moto = await getMoto(params.id);
+
+  return {
+    title: moto.modelo,
+  };
+}
+
+export default async function MotoPage({ params }: { params: { id: string } }) {
+  const moto = await getMoto(params.id);
+
   return (
     <div className="container">
       <div
@@ -25,30 +61,18 @@ export default function Page() {
       >
         <Carousel className="w-full">
           <CarouselContent>
-            <CarouselItem>
-              <Image
-                src="/moto.png"
-                width={952}
-                height={714}
-                alt="Imagem da Moto"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src="/moto.png"
-                width={952}
-                height={714}
-                alt="Imagem da Moto"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <Image
-                src="/moto.png"
-                width={952}
-                height={714}
-                alt="Imagem da Moto"
-              />
-            </CarouselItem>
+            {moto.imagem.map((imagem, index) => {
+              return (
+                <CarouselItem key={imagem.id}>
+                  <Image
+                    src={process.env.NEXT_PUBLIC_API_URL + imagem.url}
+                    width={952}
+                    height={714}
+                    alt={`Imagem ${index} da moto ${moto.modelo} de marca ${moto.marca}`}
+                  />
+                </CarouselItem>
+              );
+            })}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
@@ -62,18 +86,18 @@ export default function Page() {
         >
           <div className="flex flex-col gap-2">
             <h1 className="text-2xl uppercase text-foundation-black-1">
-              Honda <strong>CB 500F Abs</strong>
+              {moto.marca} <strong>{moto.modelo}</strong>
             </h1>
-            <p className="font-medium text-foundation-black-5">2020 - 2021</p>
+            <p className="font-medium text-foundation-black-5">{moto.ano}</p>
             <h2 className="text-[32px] font-semibold text-foundation-black-1">
-              R$ 35.450
+              {masks.currency(moto.valor)}
             </h2>
           </div>
           <MotoStatistic.Root>
             <MotoStatistic.Item
               icon={<Icons.Road className="h-4 w-4 text-foundation-black-7" />}
               title="Quilometragem"
-              value="77,554 km"
+              value={masks.km(moto.quilometragem)}
             />
 
             <MotoStatistic.Item
@@ -81,7 +105,7 @@ export default function Page() {
                 <Icons.Transmission className="h-4 w-4 text-foundation-black-7" />
               }
               title="Marchas"
-              value="6"
+              value={moto.marchas.toString()}
             />
 
             <MotoStatistic.Item
@@ -89,13 +113,13 @@ export default function Page() {
                 <Icons.Gradient className="h-4 w-4 text-foundation-black-7" />
               }
               title="Cor"
-              value="Preta / Vermelha"
+              value={moto.cor}
             />
 
             <MotoStatistic.Item
               icon={<Icons.Speed className="h-4 w-4 text-foundation-black-7" />}
               title="Cilindrada"
-              value="500 cc"
+              value={moto.cilindrada.toString()}
             />
 
             <MotoStatistic.Item
@@ -103,7 +127,7 @@ export default function Page() {
                 <CircleMinus size={16} className="text-foundation-black-7" />
               }
               title="Freio dianteiro"
-              value="Tambor"
+              value={moto.freioDianteiro}
             />
 
             <MotoStatistic.Item
@@ -111,18 +135,10 @@ export default function Page() {
                 <CircleMinus size={16} className="text-foundation-black-7" />
               }
               title="Freio traseiro"
-              value="Disco"
+              value={moto.freioTraseiro}
             />
           </MotoStatistic.Root>
-          <Button
-            variant="primary"
-            className="uppercase text-foundation-black-13"
-            onClick={() => {
-              window.open("https://wa.me/5521999243300");
-            }}
-          >
-            Tenho interesse
-          </Button>
+          <InterestedButton />
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ export const Info = ({ title, km, value, year, ...props }: InfoProps) => {
       <div className="flex items-center gap-1">
         <Icons.Road className="text-foundation-orange-200" />
         <p className="text-xs font-medium text-foundation-black-5">
-          {masks.km(km)} Km
+          {masks.km(km)}
         </p>
       </div>
       <p className="text-xl font-semibold">{masks.currency(value)}</p>

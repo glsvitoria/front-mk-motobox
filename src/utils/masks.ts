@@ -8,6 +8,6 @@ export const masks = {
     }).format(value / 100);
   },
   km: (value: number) => {
-    return new Intl.NumberFormat("pt-BR").format(value);
+    return new Intl.NumberFormat("pt-BR").format(value) + " km";
   },
 };

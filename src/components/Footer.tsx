@@ -96,36 +96,28 @@ export const Footer = () => {
               Contato
             </p>
             <ul className="flex flex-col gap-2">
-              <li>
-                <SocialNetwork.Root
-                  href={process.env.NEXT_PUBLIC_INSTAGRAM_LINK || ""}
-                >
-                  <SocialNetwork.Icon>
-                    <ExternalIcons.Instagram className="h-5 w-5" />
-                  </SocialNetwork.Icon>
-                  <SocialNetwork.Label>@mkmotobox</SocialNetwork.Label>
-                </SocialNetwork.Root>
-              </li>
-              <li>
-                <SocialNetwork.Root
-                  href={process.env.NEXT_PUBLIC_WHATSAPP_LINK || ""}
-                >
-                  <SocialNetwork.Icon>
-                    <ExternalIcons.Whatsapp className="h-5 w-5" />
-                  </SocialNetwork.Icon>
-                  <SocialNetwork.Label>(21) 99924-3300</SocialNetwork.Label>
-                </SocialNetwork.Root>
-              </li>
-              <li>
-                <SocialNetwork.Root
-                  href={process.env.NEXT_PUBLIC_MAIL_TO || ""}
-                >
-                  <SocialNetwork.Icon>
-                    <ExternalIcons.Gmail className="h-5 w-5" />
-                  </SocialNetwork.Icon>
-                  <SocialNetwork.Label>motobox@gmail.com</SocialNetwork.Label>
-                </SocialNetwork.Root>
-              </li>
+              <SocialNetwork.Root
+                href={process.env.NEXT_PUBLIC_INSTAGRAM_LINK || ""}
+              >
+                <SocialNetwork.Icon>
+                  <ExternalIcons.Instagram className="h-5 w-5" />
+                </SocialNetwork.Icon>
+                <SocialNetwork.Label>@mkmotobox</SocialNetwork.Label>
+              </SocialNetwork.Root>
+              <SocialNetwork.Root
+                href={process.env.NEXT_PUBLIC_WHATSAPP_LINK || ""}
+              >
+                <SocialNetwork.Icon>
+                  <ExternalIcons.Whatsapp className="h-5 w-5" />
+                </SocialNetwork.Icon>
+                <SocialNetwork.Label>(21) 99924-3300</SocialNetwork.Label>
+              </SocialNetwork.Root>
+              <SocialNetwork.Root href={process.env.NEXT_PUBLIC_MAIL_TO || ""}>
+                <SocialNetwork.Icon>
+                  <ExternalIcons.Gmail className="h-5 w-5" />
+                </SocialNetwork.Icon>
+                <SocialNetwork.Label>motobox@gmail.com</SocialNetwork.Label>
+              </SocialNetwork.Root>
             </ul>
           </div>
         </div>
