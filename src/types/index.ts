@@ -16,6 +16,8 @@ export interface Moto {
   imagem: {
     id: string;
     url: string;
+    width: number;
+    height: number;
   }[];
 
   createdAt: string;

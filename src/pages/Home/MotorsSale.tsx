@@ -3,8 +3,16 @@ import * as MotorcycleCard from "@/components/MotorcycleCard";
 import * as Icons from "@/assets/icons";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { MotoService } from "@/services/Moto";
 
-export default function MotorsSale() {
+export default async function MotorsSale() {
+  const { motos } = await MotoService.get({
+    init: "1",
+    limit: "4",
+  });
+
+  console.log(motos);
+
   return (
     <section
       className="container relative hidden flex-col items-center gap-6 py-16 md:flex"
@@ -28,60 +36,24 @@ export default function MotorsSale() {
         </div>
       </div>
       <div className="grid w-full grid-cols-4 justify-between lg:grid-cols-6">
-        <MotorcycleCard.Root>
-          <MotorcycleCard.Photo src="/moto.png" alt="Moto" />
-          <MotorcycleCard.Info
-            km={24054}
-            title="Honda CB 500F Abs"
-            value={3545000}
-            year="2020 - 2021"
-          />
-        </MotorcycleCard.Root>
-        <MotorcycleCard.Root>
-          <MotorcycleCard.Photo src="/moto.png" alt="Moto" />
-          <MotorcycleCard.Info
-            km={24054}
-            title="Honda CB 500F Abs"
-            value={3545000}
-            year="2020 - 2021"
-          />
-        </MotorcycleCard.Root>
-        <MotorcycleCard.Root>
-          <MotorcycleCard.Photo src="/moto.png" alt="Moto" />
-          <MotorcycleCard.Info
-            km={24054}
-            title="Honda CB 500F Abs"
-            value={3545000}
-            year="2020 - 2021"
-          />
-        </MotorcycleCard.Root>
-        <MotorcycleCard.Root>
-          <MotorcycleCard.Photo src="/moto.png" alt="Moto" />
-          <MotorcycleCard.Info
-            km={24054}
-            title="Honda CB 500F Abs"
-            value={3545000}
-            year="2020 - 2021"
-          />
-        </MotorcycleCard.Root>
-        <MotorcycleCard.Root>
-          <MotorcycleCard.Photo src="/moto.png" alt="Moto" />
-          <MotorcycleCard.Info
-            km={24054}
-            title="Honda CB 500F Abs"
-            value={3545000}
-            year="2020 - 2021"
-          />
-        </MotorcycleCard.Root>
-        <MotorcycleCard.Root>
-          <MotorcycleCard.Photo src="/moto.png" alt="Moto" />
-          <MotorcycleCard.Info
-            km={24054}
-            title="Honda CB 500F Abs"
-            value={3545000}
-            year="2020 - 2021"
-          />
-        </MotorcycleCard.Root>
+        {motos.map((moto) => {
+          return (
+            <MotorcycleCard.Root key={moto.documentId}>
+              <MotorcycleCard.Photo
+                src={process.env.NEXT_PUBLIC_PHOTO_URL + moto.imagem[0].url}
+                alt="Moto"
+              />
+              <MotorcycleCard.Info
+                id={moto.documentId}
+                km={moto.quilometragem}
+                mark={moto.marca}
+                model={moto.modelo}
+                value={moto.valor}
+                year={moto.ano}
+              />
+            </MotorcycleCard.Root>
+          );
+        })}
       </div>
       <Button variant="tertiary">
         Ver mais <ChevronRight size={24} />
