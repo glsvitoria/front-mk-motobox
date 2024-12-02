@@ -9,7 +9,7 @@ export const Photo = ({ alt, className, ...props }: PhotoProps) => {
   return (
     <Image
       alt={alt}
-      className={cn("h-[151px] w-[194px]", className)}
+      className={cn("h-[151px] w-[194px] object-cover", className)}
       width={194}
       height={151}
       {...props}

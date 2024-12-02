@@ -19,6 +19,7 @@ const buttonVariants = cva(
           "bg-transparent text-foundation-orange-300 border focus-visible:border-foundation-black-11 hover:border-foundation-orange-300 hover:bg-foundation-black-12 border-transparent",
       },
       size: {
+        pagination: "h-[36px] px-3 py-1 button-sm min-w-10",
         sm: "h-[36px] px-3 py-1 min-w-32 button-sm",
         default: "h-[51px] px-4 py-2 min-w-40 button-md lg:button-lg",
       },

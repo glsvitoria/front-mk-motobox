@@ -3,15 +3,29 @@ import * as MotorcycleCard from "@/components/MotorcycleCard";
 import * as Icons from "@/assets/icons";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import { MotoService } from "@/services/Moto";
+import Link from "next/link";
+import { Moto } from "@/types";
+
+export async function getMotos(): Promise<Moto[]> {
+  const response = await fetch(
+    process.env.NEXT_PUBLIC_API_URL +
+      "/motos?pagination[pageSize]=4&populate=*",
+    {
+      method: "GET",
+    },
+  );
+
+  const data = await response.json();
+
+  if (!data.data) {
+    return [];
+  }
+
+  return data.data;
+}
 
 export default async function MotorsSale() {
-  const { motos } = await MotoService.get({
-    init: "1",
-    limit: "4",
-  });
-
-  console.log(motos);
+  const motos = await getMotos();
 
   return (
     <section
@@ -55,9 +69,11 @@ export default async function MotorsSale() {
           );
         })}
       </div>
-      <Button variant="tertiary">
-        Ver mais <ChevronRight size={24} />
-      </Button>
+      <Link href="/pesquisa">
+        <Button variant="tertiary">
+          Ver mais <ChevronRight size={24} />
+        </Button>
+      </Link>
       <div className="elipse-one" />
     </section>
   );

@@ -17,7 +17,7 @@ import Image from "next/image";
 
 async function getMoto(id: string): Promise<Moto> {
   const res = await fetch(`http://localhost:1337/api/motos/${id}?populate=*`, {
-    // cache: "force-cache",
+    cache: "no-cache",
   });
   const data = await res.json();
   const moto = data.data;
@@ -65,9 +65,10 @@ export default async function MotoPage({ params }: { params: { id: string } }) {
               return (
                 <CarouselItem key={imagem.id}>
                   <Image
-                    src={process.env.NEXT_PUBLIC_API_URL + imagem.url}
-                    width={952}
-                    height={714}
+                    src={process.env.NEXT_PUBLIC_PHOTO_URL + imagem.url}
+                    width={imagem.width}
+                    height={imagem.height}
+                    className="h-full max-h-[714px] w-full max-w-[952px] object-cover"
                     alt={`Imagem ${index} da moto ${moto.modelo} de marca ${moto.marca}`}
                   />
                 </CarouselItem>
