@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils";
-import * as MotorcycleCard from "@/components/MotorcycleCard";
+// import * as MotorcycleCard from "@/components/MotorcycleCard";
 import * as Icons from "@/assets/icons";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { MotoService } from "@/services/Moto";
+// import { MotoService } from "@/services/Moto";
 
-export default async function MotorsSale() {
-  const { motos } = await MotoService.get({
-    init: "1",
-    limit: "4",
-  });
+export default function MotorsSale() {
+  //   const { motos } = await MotoService.get({
+  //     init: "1",
+  //     limit: "4",
+  //   });
 
   return (
     <section
@@ -34,7 +34,7 @@ export default async function MotorsSale() {
           <Icons.MKMotoBox.K />
         </div>
       </div>
-      <div className="grid w-full grid-cols-4 justify-between lg:grid-cols-6">
+      {/* <div className="grid w-full grid-cols-4 justify-between lg:grid-cols-6">
         {!!motos && motos.length > 0 ? (
           motos.map((moto) => {
             return (
@@ -57,7 +57,7 @@ export default async function MotorsSale() {
         ) : (
           <MotorcycleCard.SkeletonCard />
         )}
-      </div>
+      </div> */}
       <Link href="/pesquisa">
         <Button variant="tertiary">
           Ver mais <ChevronRight size={24} />
