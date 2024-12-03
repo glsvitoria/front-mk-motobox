@@ -14,8 +14,7 @@ export const MotoService = {
       .then((response) => ({
         motos: response.data.data,
         pagination: {
-          page: response.data.meta.pagination.page,
-          total: response.data.meta.pagination.total,
+          ...response.data.meta.pagination,
         },
       }))
       .catch(() => {

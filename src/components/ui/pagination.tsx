@@ -44,10 +44,10 @@ const PaginationLink = ({
   isActive,
   ...props
 }: PaginationLinkProps) => (
-  <Button
-    variant={isActive ? "primary" : "outline"}
-    size="pagination"
+  <button
     className={cn(
+      "h-10 w-10 rounded-lg border border-transparent transition-all duration-300 hover:bg-foundation-orange-300",
+      isActive && "border-foundation-orange-300",
       props.disabled && "pointer-events-none cursor-not-allowed opacity-50",
       className,
     )}
@@ -60,30 +60,42 @@ PaginationLink.displayName = "PaginationLink";
 const PaginationPrevious = ({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
+}: React.ComponentProps<"button">) => (
+  <button
     aria-label="Voltar para a página anterior"
-    className={cn("min-w-32 gap-1 pl-2.5", className)}
+    className={cn(
+      "group flex h-10 min-w-32 items-center justify-center gap-1 rounded-lg border border-transparent px-2.5 transition-all duration-300 hover:border-foundation-orange-300 hover:bg-foundation-orange-300 disabled:pointer-events-none disabled:text-zinc-500",
+      className,
+    )}
     {...props}
   >
-    <ChevronLeft className="h-4 w-4" />
+    <ChevronLeft
+      className="text-foundation-orange-300 group-hover:text-white group-disabled:text-zinc-500"
+      size={24}
+    />
     <span>Anterior</span>
-  </PaginationLink>
+  </button>
 );
 PaginationPrevious.displayName = "PaginationPrevious";
 
 const PaginationNext = ({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
+}: React.ComponentProps<"button">) => (
+  <button
     aria-label="Avançar para a próxima página"
-    className={cn("min-w-32 gap-1 pr-2.5", className)}
+    className={cn(
+      "group flex h-10 min-w-32 items-center justify-center gap-1 rounded-lg border border-transparent px-2.5 transition-all duration-300 hover:border-foundation-orange-300 hover:bg-foundation-orange-300 disabled:pointer-events-none disabled:text-zinc-500",
+      className,
+    )}
     {...props}
   >
     <span>Próximo</span>
-    <ChevronRight className="h-4 w-4" />
-  </PaginationLink>
+    <ChevronRight
+      className="text-foundation-orange-300 group-hover:text-white group-disabled:text-zinc-500"
+      size={24}
+    />
+  </button>
 );
 PaginationNext.displayName = "PaginationNext";
 

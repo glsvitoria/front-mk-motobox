@@ -47,9 +47,9 @@ export const Header = () => {
       <div className="container mx-auto flex h-16 w-full items-center justify-between gap-x-20 pt-2 md:grid md:h-20 md:grid-cols-[1fr_auto_1fr] md:justify-center">
         <nav className={cn(["hidden md:block"])}>
           <ul className="flex justify-between">
-            <NavLink href="">Motos</NavLink>
-            <NavLink href="">Categorias</NavLink>
-            <NavLink href="">Equipamentos</NavLink>
+            <NavLink href="/#motors-sale">Motos</NavLink>
+            <NavLink href="/#categories">Categorias</NavLink>
+            <NavLink href="/#equipment">Equipamentos</NavLink>
           </ul>
         </nav>
         <Image
@@ -61,9 +61,9 @@ export const Header = () => {
         />
         <nav className={cn(["hidden md:block"])}>
           <ul className="flex justify-between">
-            <NavLink href="">Sobre nós</NavLink>
-            <NavLink href="">Marcas</NavLink>
-            <NavLink href="">Onde estamos</NavLink>
+            <NavLink href="/#about-us">Sobre nós</NavLink>
+            <NavLink href="/#brands">Marcas</NavLink>
+            <NavLink href="/#motos">Onde estamos</NavLink>
           </ul>
         </nav>
 
@@ -84,32 +84,32 @@ export const Header = () => {
               <ul className="flex flex-col gap-6 font-medium text-white">
                 <li>
                   <DrawerClose asChild>
-                    <Link href="#motors-sale">Motos</Link>
+                    <Link href="/#motors-sale">Motos</Link>
                   </DrawerClose>
                 </li>
                 <li>
                   <DrawerClose asChild>
-                    <Link href="#categories">Categorias</Link>
+                    <Link href="/#categories">Categorias</Link>
                   </DrawerClose>
                 </li>
                 <li>
                   <DrawerClose asChild>
-                    <Link href="#equipment">Equipamentos</Link>
+                    <Link href="/#equipment">Equipamentos</Link>
                   </DrawerClose>
                 </li>
                 <li>
                   <DrawerClose asChild>
-                    <Link href="#about-us">Sobre nós</Link>
+                    <Link href="/#about-us">Sobre nós</Link>
                   </DrawerClose>
                 </li>
                 <li>
                   <DrawerClose asChild>
-                    <Link href="#brands">Marcas</Link>
+                    <Link href="/#brands">Marcas</Link>
                   </DrawerClose>
                 </li>
                 <li>
                   <DrawerClose asChild>
-                    <Link href="#motos">Onde Estamos</Link>
+                    <Link href="/#motos">Onde Estamos</Link>
                   </DrawerClose>
                 </li>
               </ul>

@@ -4,28 +4,13 @@ import * as Icons from "@/assets/icons";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { Moto } from "@/types";
-
-export async function getMotos(): Promise<Moto[]> {
-  const response = await fetch(
-    process.env.NEXT_PUBLIC_API_URL +
-      "/motos?pagination[pageSize]=4&populate=*",
-    {
-      method: "GET",
-    },
-  );
-
-  const data = await response.json();
-
-  if (!data.data) {
-    return [];
-  }
-
-  return data.data;
-}
+import { MotoService } from "@/services/Moto";
 
 export default async function MotorsSale() {
-  const motos = await getMotos();
+  const { motos } = await MotoService.get({
+    init: "1",
+    limit: "4",
+  });
 
   return (
     <section
@@ -50,24 +35,28 @@ export default async function MotorsSale() {
         </div>
       </div>
       <div className="grid w-full grid-cols-4 justify-between lg:grid-cols-6">
-        {motos.map((moto) => {
-          return (
-            <MotorcycleCard.Root key={moto.documentId}>
-              <MotorcycleCard.Photo
-                src={process.env.NEXT_PUBLIC_PHOTO_URL + moto.imagem[0].url}
-                alt="Moto"
-              />
-              <MotorcycleCard.Info
-                id={moto.documentId}
-                km={moto.quilometragem}
-                mark={moto.marca}
-                model={moto.modelo}
-                value={moto.valor}
-                year={moto.ano}
-              />
-            </MotorcycleCard.Root>
-          );
-        })}
+        {!!motos && motos.length > 0 ? (
+          motos.map((moto) => {
+            return (
+              <MotorcycleCard.Root key={moto.documentId}>
+                <MotorcycleCard.Photo
+                  src={process.env.NEXT_PUBLIC_PHOTO_URL + moto.imagem[0].url}
+                  alt="Moto"
+                />
+                <MotorcycleCard.Info
+                  id={moto.documentId}
+                  km={moto.quilometragem}
+                  mark={moto.marca}
+                  model={moto.modelo}
+                  value={moto.valor}
+                  year={moto.ano}
+                />
+              </MotorcycleCard.Root>
+            );
+          })
+        ) : (
+          <MotorcycleCard.SkeletonCard />
+        )}
       </div>
       <Link href="/pesquisa">
         <Button variant="tertiary">

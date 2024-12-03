@@ -1,7 +1,6 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -10,17 +9,25 @@ import {
 
 export interface PaginationComponentProps {
   currentPage: number;
-  totalPages: number;
+  pageCount: number;
+  pageSize: number;
+  totalItems: number;
   onChangePage: (page: string) => void;
 }
 
 export const PaginationComponent = ({
   currentPage,
   onChangePage,
-  totalPages,
+  pageCount,
+  pageSize,
+  totalItems,
 }: PaginationComponentProps) => {
   return (
-    <Pagination>
+    <Pagination className="flex items-center justify-between">
+      <p className="font-medium">
+        {pageSize} de {totalItems} itens
+      </p>
+
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious
@@ -31,24 +38,7 @@ export const PaginationComponent = ({
           />
         </PaginationItem>
 
-        <PaginationItem>
-          <PaginationLink
-            isActive={currentPage === 1}
-            onClick={() => {
-              onChangePage(String(1));
-            }}
-          >
-            1
-          </PaginationLink>
-        </PaginationItem>
-
-        {totalPages > 3 && currentPage > 3 && (
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-        )}
-
-        {currentPage > 2 && (
+        {pageCount > 1 && currentPage > 1 && (
           <PaginationItem>
             <PaginationLink
               onClick={() => {
@@ -60,13 +50,18 @@ export const PaginationComponent = ({
           </PaginationItem>
         )}
 
-        {currentPage > 1 && (
-          <PaginationItem>
-            <PaginationLink isActive={true}>{currentPage}</PaginationLink>
-          </PaginationItem>
-        )}
+        <PaginationItem>
+          <PaginationLink
+            isActive
+            onClick={() => {
+              onChangePage(String(currentPage));
+            }}
+          >
+            {currentPage}
+          </PaginationLink>
+        </PaginationItem>
 
-        {currentPage < totalPages && (
+        {pageCount > 1 && currentPage !== pageCount && (
           <PaginationItem>
             <PaginationLink
               onClick={() => {
@@ -78,28 +73,24 @@ export const PaginationComponent = ({
           </PaginationItem>
         )}
 
-        {totalPages > 4 && currentPage !== totalPages && (
-          <PaginationItem>
-            <PaginationLink
-              isActive={currentPage === totalPages}
-              onClick={() => {
-                onChangePage(String(totalPages));
-              }}
-            >
-              {totalPages}
-            </PaginationLink>
-          </PaginationItem>
-        )}
-
         <PaginationItem>
           <PaginationNext
-            disabled={currentPage === totalPages}
+            disabled={currentPage === pageCount}
             onClick={() => {
               onChangePage(String(currentPage + 1));
             }}
           />
         </PaginationItem>
       </PaginationContent>
+
+      <button
+        className="font-medium underline"
+        onClick={() => {
+          onChangePage(String(pageCount));
+        }}
+      >
+        Ir para última página
+      </button>
     </Pagination>
   );
 };
