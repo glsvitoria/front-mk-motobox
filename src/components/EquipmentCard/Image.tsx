@@ -6,7 +6,7 @@ export interface ImageProps extends ImageNextProps {
 
 export const Image = ({ alt, ...props }: ImageProps) => {
   return (
-    <div className="w-fit rounded-lg border border-[#C85309] bg-equipmentCard">
+    <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-[#C85309] bg-equipmentCard">
       <ImageNext alt={alt} {...props}></ImageNext>
     </div>
   );

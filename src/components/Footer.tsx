@@ -3,6 +3,8 @@ import { Button } from "./ui/button";
 import * as ExternalIcons from "@/assets/icons";
 import * as SocialNetwork from "@/components/SocialNetwork";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { formatWppLink } from "@/utils/formatWppLink";
 
 export const Footer = () => {
   return (
@@ -36,12 +38,21 @@ export const Footer = () => {
             <p className="body-md-semibold uppercase text-white">
               Deseja marcar hora?
             </p>
-            <Button
-              className="uppercase text-foundation-black-13"
-              variant="primary"
+            <Link
+              href={formatWppLink({
+                message:
+                  "Olá, acessei o site da MK Moto Box e gostaria de agendar um horário para visitar a loja. Como posso fazer isso?",
+                phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "",
+              })}
+              target="_blank"
             >
-              Agendar Horário
-            </Button>
+              <Button
+                className="uppercase text-foundation-black-13"
+                variant="primary"
+              >
+                Agendar Horário
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -69,12 +80,21 @@ export const Footer = () => {
             >
               Sua loja nacional de motos usadas com curadoria de qualidade.
             </p>
-            <Button
-              className="w-full uppercase text-foundation-black-13"
-              variant="primary"
+            <Link
+              href={formatWppLink({
+                message:
+                  "Olá, acessei o site da MK Moto Box e gostaria de agendar um horário para visitar a loja. Como posso fazer isso?",
+                phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || ``,
+              })}
+              target="_blank"
             >
-              Agendar Horário
-            </Button>
+              <Button
+                className="w-full uppercase text-foundation-black-13"
+                variant="primary"
+              >
+                Agendar Horário
+              </Button>
+            </Link>
           </div>
           <div className="flex w-full flex-col gap-6">
             <p className="body-md-semibold text-center uppercase text-white lg:text-left">
@@ -105,7 +125,11 @@ export const Footer = () => {
                 <SocialNetwork.Label>@mkmotobox</SocialNetwork.Label>
               </SocialNetwork.Root>
               <SocialNetwork.Root
-                href={process.env.NEXT_PUBLIC_WHATSAPP_LINK || ""}
+                href={formatWppLink({
+                  message:
+                    "Olá, entrei no seu site e tenho interesse em conversar mais sobre os produtos da MK Moto Box. Como posso fazer isso?",
+                  phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "",
+                })}
               >
                 <SocialNetwork.Icon>
                   <ExternalIcons.Whatsapp className="h-5 w-5" />
@@ -116,7 +140,7 @@ export const Footer = () => {
                 <SocialNetwork.Icon>
                   <ExternalIcons.Gmail className="h-5 w-5" />
                 </SocialNetwork.Icon>
-                <SocialNetwork.Label>motobox@gmail.com</SocialNetwork.Label>
+                <SocialNetwork.Label>mkmotobox@gmail.com</SocialNetwork.Label>
               </SocialNetwork.Root>
             </ul>
           </div>

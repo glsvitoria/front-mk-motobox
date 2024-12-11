@@ -61,7 +61,7 @@ export default function Equipments() {
               <EquipmentCard.Root>
                 <EquipmentCard.Title>Capacetes</EquipmentCard.Title>
                 <EquipmentCard.Image
-                  src="/equipment/gloves.png"
+                  src="/equipment/helmet.png"
                   alt="Luva de moto"
                   width={70}
                   height={70}
@@ -70,7 +70,7 @@ export default function Equipments() {
               <EquipmentCard.Root>
                 <EquipmentCard.Title>Baús</EquipmentCard.Title>
                 <EquipmentCard.Image
-                  src="/equipment/gloves.png"
+                  src="/equipment/storage.png"
                   alt="Luva de moto"
                   width={70}
                   height={70}

@@ -58,7 +58,7 @@ export default function SearchPage() {
     const page = searchParams?.get("p") || "1";
     const { motos, pagination } = await MotoService.get({
       init: page,
-      limit: "2",
+      limit: "12",
       search: search || "",
     });
     setMotos(motos);

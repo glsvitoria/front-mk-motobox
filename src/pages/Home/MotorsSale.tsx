@@ -5,16 +5,30 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { MotoService } from "@/services/Moto";
+import { Moto } from "@/types";
 
-export default async function MotorsSale() {
+export async function getStaticProps() {
   const { motos } = await MotoService.get({
     init: "1",
     limit: "4",
   });
 
+  return {
+    props: {
+      motos,
+    },
+    revalidate: 60,
+  };
+}
+
+interface MotosSaleProps {
+  motos: Moto[];
+}
+
+export default async function MotorsSale({ motos }: MotosSaleProps) {
   return (
     <section
-      className="container relative hidden flex-col items-center gap-6 py-16 md:flex"
+      className="container relative flex flex-col items-center gap-6 py-16"
       id="motors-sale"
     >
       <div
@@ -25,7 +39,7 @@ export default async function MotorsSale() {
         ])}
       >
         <h2 className="text-2xl font-semibold text-gray">Motos a venda</h2>
-        <div className="flex items-center gap-2">
+        <div className="hidden items-center gap-2 md:flex">
           <p className="text-right text-white">
             Adquira confiança e qualidade
             <br />
@@ -34,7 +48,7 @@ export default async function MotorsSale() {
           <Icons.MKMotoBox.K />
         </div>
       </div>
-      <div className="grid w-full grid-cols-4 justify-between lg:grid-cols-6">
+      <div className="grid w-full grid-cols-1 justify-between md:grid-cols-4 lg:grid-cols-6">
         {!!motos && motos.length > 0 ? (
           motos.map((moto) => {
             return (

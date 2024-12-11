@@ -1,22 +1,20 @@
-"use client";
-
+import Link from "next/link";
 import { Button } from "./ui/button";
+import { formatWppLink } from "@/utils/formatWppLink";
 
 export const InterestedButton = () => {
-  const handleOpenInterest = () => {
-    window.open(
-      "https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20moto%20que%20vi%20no%20site.",
-      "_blank",
-    );
-  };
-
   return (
-    <Button
-      variant="primary"
-      className="uppercase text-foundation-black-13"
-      onClick={handleOpenInterest}
+    <Link
+      target="_blank"
+      href={formatWppLink({
+        phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "",
+        message:
+          "Olá, acessei o site da MK Moto Box e gostaria de obter mais informações sobre a loja.",
+      })}
     >
-      Tenho interesse
-    </Button>
+      <Button variant="primary" className="uppercase text-foundation-black-13">
+        Tenho interesse
+      </Button>
+    </Link>
   );
 };

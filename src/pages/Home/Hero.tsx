@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { formatWppLink } from "@/utils/formatWppLink";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -38,10 +40,23 @@ export default function Hero() {
               qualidade
             </p>
           </div>
-          <Button variant="primary" className="w-full text-foundation-black-13">
-            Fale Conosco
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+          <Link
+            target="_blank"
+            href={formatWppLink({
+              message:
+                "Olá, acessei o site da MK Moto Box e gostaria de obter mais informações sobre a loja.",
+              phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "",
+            })}
+            className="w-full"
+          >
+            <Button
+              variant="primary"
+              className="w-full text-foundation-black-13"
+            >
+              Fale Conosco
+              <ChevronRight className="h-6 w-6" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
