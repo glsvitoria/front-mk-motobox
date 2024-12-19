@@ -5,18 +5,22 @@ import Categories from "@/pages/Home/Categories";
 import Equipments from "@/pages/Home/Equipments";
 import Hero from "@/pages/Home/Hero";
 import Partnerships from "@/pages/Home/Partnerships";
+import LogoSchema from "@/utils/logoSchema";
 
 export default function Home() {
   return (
-    <main className="w-[calc(100vw - 8px)] flex flex-col items-center overflow-hidden">
-      <Hero />
-      <Categories />
-      {/* <MotorsSale /> */}
-      <Equipments />
-      <CallToAction />
-      <AboutUs />
-      <Partnerships />
-      <Brands />
-    </main>
+    <>
+      <LogoSchema />
+
+      <main className="w-[calc(100vw - 8px)] flex flex-col items-center overflow-hidden">
+        <Hero />
+        <Categories />
+        <Equipments />
+        <CallToAction />
+        <AboutUs />
+        <Partnerships />
+        <Brands />
+      </main>
+    </>
   );
 }

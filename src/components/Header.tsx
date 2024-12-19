@@ -15,6 +15,7 @@ import {
 } from "./ui/drawer";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { formatWppLink } from "@/utils/formatWppLink";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -115,9 +116,19 @@ export const Header = () => {
               </ul>
             </div>
             <DrawerFooter>
-              <Button variant="primary" className="text-foundation-black-13">
-                Fale Conosco
-              </Button>
+              <Link
+                target="_blank"
+                href={formatWppLink({
+                  message:
+                    "Olá, acessei o site da MK Moto Box e gostaria de obter mais informações sobre a loja.",
+                  phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "",
+                })}
+                className="w-full"
+              >
+                <Button variant="primary" className="text-foundation-black-13">
+                  Fale Conosco
+                </Button>
+              </Link>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

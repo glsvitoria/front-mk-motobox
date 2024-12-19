@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import * as Icons from "@/assets/icons";
+import Link from "next/link";
+import { formatWppLink } from "@/utils/formatWppLink";
 
 export default function CallToAction() {
   return (
@@ -12,15 +14,23 @@ export default function CallToAction() {
               Que tal vender através da MK?
             </h3>
             <p className="body body-md text-white">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-              repellendus non dicta pariatur
+              Anuncie a sua moto através do nosso site!
             </p>
           </div>
         </div>
         <div className="hidden h-px w-full bg-foundation-orange-300 md:block" />
-        <Button variant="primary" className="w-full text-black md:w-auto">
-          Quero saber mais!
-        </Button>
+        <Link
+          target="_blank"
+          href={formatWppLink({
+            message:
+              "Olá, acessei o site da MK Moto Box e gostaria de obter mais informações sobre como posso vender minha moto.",
+            phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || "",
+          })}
+        >
+          <Button variant="primary" className="w-full text-black md:w-auto">
+            Quero saber mais!
+          </Button>
+        </Link>
       </div>
     </section>
   );

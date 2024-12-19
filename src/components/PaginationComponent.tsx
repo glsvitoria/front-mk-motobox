@@ -25,7 +25,10 @@ export const PaginationComponent = ({
   return (
     <Pagination className="flex items-center justify-between">
       <p className="font-medium">
-        {pageSize} de {totalItems} itens
+        {currentPage < pageCount
+          ? pageSize
+          : totalItems - pageSize * (pageCount - 1)}{" "}
+        de {totalItems} itens
       </p>
 
       <PaginationContent>
