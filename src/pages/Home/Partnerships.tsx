@@ -49,10 +49,17 @@ export default function Partnerships() {
         </div>
         <div className="flex w-full justify-center md:justify-end">
           <div className="flex w-full max-w-lg flex-col gap-2">
-            <div className="relative flex h-[265px] w-full items-center justify-center bg-[#D9D9D9]">
+            <div className="relative flex h-[265px] w-full items-center justify-center overflow-hidden bg-[#D9D9D9]">
+              <Image
+                src="/partner-video.png"
+                width={472}
+                height={265}
+                alt="Imagem de referência para ir pro canal do Mário Linhares"
+                className="h-full w-full object-cover"
+              />
               <CirclePlay
                 size={64}
-                className="cursor-pointer text-[#FF0000] transition-colors duration-300 hover:brightness-75"
+                className="absolute cursor-pointer text-[#FF0000] transition-colors duration-300 hover:brightness-75"
                 onClick={() =>
                   window.open(
                     "https://www.youtube.com/@automotobymariolinhares",

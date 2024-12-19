@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import Head from "next/head";
 import { siteNavigationElementData } from "@/utils/siteNavigationElementData";
 
 const geistSans = localFont({
@@ -44,6 +43,9 @@ export const metadata: Metadata = {
     follow: true,
     index: true,
   },
+  icons: {
+    icon: "/logo-mk.svg",
+  },
 };
 
 export default function RootLayout({
@@ -53,10 +55,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <Head>
-        <link rel="icon" href="/logo.svg" sizes="any" />
-      </Head>
-
       <script
         id="site-navigation-element"
         type="application/ld+json"
