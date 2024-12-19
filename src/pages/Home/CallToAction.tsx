@@ -14,8 +14,7 @@ export default function CallToAction() {
               Que tal vender através da MK?
             </h3>
             <p className="body body-md text-white">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-              repellendus non dicta pariatur
+              Anuncie a sua moto através do nosso site!
             </p>
           </div>
         </div>
