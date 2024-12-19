@@ -12,7 +12,7 @@ export default function AboutUs() {
         <h2 className="text-2xl font-semibold text-gray">Sobre nós</h2>
         <div className="hidden items-center gap-2 md:flex">
           <p className="text-right text-white">
-            Conheça nossa missão, nossos valores e
+            Conheça nossa história, nossos missão e
             <br />
             nossos parceiros.
           </p>
