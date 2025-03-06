@@ -110,7 +110,7 @@ export const Header = () => {
                 </li>
                 <li>
                   <DrawerClose asChild>
-                    <Link href="/#motos">Onde Estamos</Link>
+                    <Link href="/#footer">Onde Estamos</Link>
                   </DrawerClose>
                 </li>
               </ul>

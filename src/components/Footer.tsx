@@ -13,6 +13,7 @@ export const Footer = () => {
         "container flex flex-col gap-4 bg-foundation-black-13 pb-10 pt-16",
         "lg:gap-12",
       ])}
+      id="footer"
     >
       <div
         className={cn([
@@ -147,8 +148,7 @@ export const Footer = () => {
         </div>
       </div>
       <address className="text-center text-sm text-white opacity-50">
-        2024 MK MotoBox. Barra World - Av. Alfredo Balthazar da Silveira, 580 -
-        1º SubSolo - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-710
+        © Copyright 2025 MK MotoBox. Todos os direitos reservados.
       </address>
     </footer>
   );
