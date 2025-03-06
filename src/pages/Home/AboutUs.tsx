@@ -1,6 +1,5 @@
 import * as Icons from "@/assets/icons";
-import { Compass } from "lucide-react";
-import Image from "next/image";
+import { Compass, Globe } from "lucide-react";
 
 export default function AboutUs() {
   return (
@@ -20,13 +19,13 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <Image
+      {/* <Image
         src="/physical-store.png"
         alt="Loja física da MK Motobox"
         width={1440}
         height={810}
         className="w-full"
-      />
+      /> */}
 
       <div className="flex flex-col justify-between gap-6 md:flex-row md:gap-20">
         <div className="flex w-full flex-col gap-4">
@@ -49,7 +48,7 @@ export default function AboutUs() {
         <div className="flex w-full flex-col gap-4">
           <div className="flex items-center gap-6">
             <div className="flex items-center justify-center rounded-2xl border border-white bg-foundation-black-11 p-3">
-              <Compass size={32} className="text-foundation-orange-200" />
+              <Globe size={32} className="text-foundation-orange-200" />
             </div>
             <h4 className="heading-md text-white">Nossa missão</h4>
           </div>

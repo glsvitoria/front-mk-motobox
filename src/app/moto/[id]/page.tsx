@@ -147,7 +147,9 @@ export default async function MotoPage({ params }: { params: { id: string } }) {
                 value={moto.freioTraseiro}
               />
             </MotoStatistic.Root>
-            <InterestedButton />
+            <InterestedButton
+              message={`Olá, acessei o site da MK Moto Box e me interessei pela moto ${moto.marca} ${moto.modelo}. Gostaria de obter mais informações sobre ela.`}
+            />
           </div>
         </div>
       </div>

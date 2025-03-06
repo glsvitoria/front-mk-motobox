@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import * as MotorcycleCard from "@/components/MotorcycleCard";
 import * as Icons from "@/assets/icons";
@@ -6,26 +8,26 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { MotoService } from "@/services/Moto";
 import { Moto } from "@/types";
+import { useCallback, useEffect, useState } from "react";
 
-export async function getStaticProps() {
-  const { motos } = await MotoService.get({
-    init: "1",
-    limit: "4",
-  });
+export default function MotorsSale() {
+  const [motos, setMotos] = useState<Moto[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  return {
-    props: {
-      motos,
-    },
-    revalidate: 60,
-  };
-}
+  const handleSearch = useCallback(async () => {
+    setLoading(true);
+    const { motos } = await MotoService.get({
+      init: "1",
+      limit: "4",
+    });
+    setMotos(motos);
+    setLoading(false);
+  }, []);
 
-interface MotosSaleProps {
-  motos: Moto[];
-}
+  useEffect(() => {
+    handleSearch();
+  }, [handleSearch]);
 
-export default async function MotorsSale({ motos }: MotosSaleProps) {
   return (
     <section
       className="container relative flex flex-col items-center gap-6 py-16"
@@ -49,7 +51,7 @@ export default async function MotorsSale({ motos }: MotosSaleProps) {
         </div>
       </div>
       <div className="grid w-full grid-cols-1 justify-between md:grid-cols-4 lg:grid-cols-6">
-        {!!motos && motos.length > 0 ? (
+        {(!!motos && motos.length > 0) || loading ? (
           motos.map((moto) => {
             return (
               <MotorcycleCard.Root key={moto.documentId}>
